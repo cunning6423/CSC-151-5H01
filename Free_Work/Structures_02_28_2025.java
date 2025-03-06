@@ -4,17 +4,17 @@ public class Structures_02_28_2025
 {
     public static void Variables() 
     {
-        Scanner in = new Scanner(system.in);
+        Scanner in = new Scanner(System.in);
         int goAgain2, goAgain;
     }
     public static void main(String[] args) 
     {
         System.out.print("\nEnter the number of times you want to run: ");
-        goAgain2 = in.next();
-        for ( int i = 0; i< goAgain2; i++)
-        {
+        //goAgain2 = in.next();
+        //for ( int i = 0; i< goAgain2; i++)
+        //{
 
-        }    
+        //}    
     }
     public static void monthSwitch()
     {
