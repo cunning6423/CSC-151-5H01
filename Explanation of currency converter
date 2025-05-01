@@ -1,0 +1,40 @@
+                                    Imports and Package
+These imports bring in necessary classes for GUI (Graphical User Interface) and events handling.
+  java.awt.event.* is for handling user actions like button clicks.
+  java.util.* includes utilities like Map and HashMap for storing currency conversion rates.
+  javax.swing.* is for creating the user interface components like buttons, text fields, and drop-down menus.
+
+                            Storing Currency Conversion Rates
+Map<String, Double> conversionRates = new HashMap<>();
+conversionRates.put("Albanian Lek", 89.24);
+conversionRates.put("United States Dollar", 1.0); 
+...
+
+A Map (HashMap) is used to store key-value pairs where the key is the currency name (e.g., "Albanian Lek") and the 
+value is its conversion rate relative to the base currency (USD, which has a rate of 1.0).
+
+                            Creating the GUI Components
+JComboBox<String> fromCurrency = new JComboBox<>(currencies);
+JComboBox<String> toCurrency = new JComboBox<>(currencies);
+JTextField amountField = new JTextField();
+JButton swapButton = new JButton("Swap");
+...
+The program creates a graphical interface with various components like:
+  Drop-down menus (JComboBox) for selecting the currencies.
+  A text field (JTextField) to enter the amount to convert.
+  Buttons (JButton) for swapping currencies, clearing inputs, and showing transaction history.
+
+                    Handling Button Actions (Event Listeners)
+swapButton.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Swap the selected currencies
+        fromCurrency.setSelectedItem(toCurrency.getSelectedItem());
+        toCurrency.setSelectedItem(fromCurrency.getSelectedItem());
+    }
+});
+
+ActionListener is an interface that listens for action events, such as a button press.
+The actionPerformed method is automatically called whenever the user clicks the Swap button.
+
+
